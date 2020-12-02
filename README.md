@@ -8,6 +8,8 @@ This is a laravel 8 CURD api with docker for following:
 - Adminer for DB management [http://localhost:8080](http://localhost:8080)
 
 # Setup
+Rename .env.example to .env
+
 Build and start docker containers
 ```
 docker-compose up
