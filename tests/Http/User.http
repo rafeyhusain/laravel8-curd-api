@@ -1,0 +1,69 @@
+# install VSCode REST Client plugin
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+# LIST
+GET http://localhost/api/users
+###
+
+# SHOW
+GET http://localhost/api/users/show/1
+###
+
+# UPDATE - Normal
+PUT http://localhost/api/users/update/1 HTTP/1.1
+content-type: application/json
+
+{
+  "id": 1,
+  "first_name": "Cedrick12",
+  "last_name": "Cassin",
+  "middle_name": "Effertz",
+  "username": "thompson.lennie",
+  "date_of_birth": "1976-07-06"
+}
+###
+
+# UPDATE - Not Found
+PUT http://localhost/api/users/update/0 HTTP/1.1
+content-type: application/json
+
+{
+  "id": 1,
+  "first_name": "Cedrick12",
+  "last_name": "Cassin",
+  "middle_name": "Effertz",
+  "username": "thompson.lennie",
+  "date_of_birth": "1976-07-06"
+}
+###
+
+# UPDATE - Bad Request
+PUT http://localhost/api/users/update/1 HTTP/1.1
+content-type: application/json
+
+{
+  "id": 1,
+  "first_name": "Cedrick12",
+  "last_name": "Cassin",
+  "middle_name": "Effertz",
+  "username": "tho.mpson.lennie",
+  "date_of_birth": "1976-07-06"
+}
+###
+
+# CREATE
+POST http://localhost/api/users/store HTTP/1.1
+content-type: application/json
+
+{
+  "first_name": "Test First",
+  "last_name": "Test Last",
+  "middle_name": "Test Middle",
+  "username": "test.name_test",
+  "date_of_birth": "1976-07-06"
+}
+###
+
+# DELETE
+DELETE http://localhost/api/users/delete/51
+###
